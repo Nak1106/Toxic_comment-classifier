@@ -1,16 +1,16 @@
 # Data files (too large for git)
-data/
-*.csv
+data/*.csv
+data/*.zip
 
-# Model checkpoints (too large for git)
-models/
+# Model checkpoints (too large for git) - but keep src/models/ Python code!
+/models/
 *.pt
 *.pth
 *.h5
 *.pkl
 
-# Reports and outputs
-reports/
+# Reports and outputs - but keep src/reports/ if we have Python code there
+/reports/
 
 # Python
 __pycache__/
