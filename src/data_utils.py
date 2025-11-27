@@ -115,9 +115,15 @@ class JigsawRNNDataset(Dataset):
 def build_dataloaders_rnn(
     train_df: pd.DataFrame,
     valid_df: pd.DataFrame,
+    max_len: int = 100,
 ) -> Tuple[DataLoader, DataLoader, dict]:
     """
     Build PyTorch DataLoaders for the BiLSTM model.
+
+    Args:
+        train_df: Training dataframe
+        valid_df: Validation dataframe
+        max_len: Maximum sequence length (default: 100)
 
     Returns train_loader, valid_loader, and the vocab dictionary.
     """
@@ -130,8 +136,8 @@ def build_dataloaders_rnn(
     y_train = train_df[LABELS].values
     y_valid = valid_df[LABELS].values
 
-    train_ds = JigsawRNNDataset(train_texts, y_train, vocab, MAX_SEQ_LEN)
-    valid_ds = JigsawRNNDataset(valid_texts, y_valid, vocab, MAX_SEQ_LEN)
+    train_ds = JigsawRNNDataset(train_texts, y_train, vocab, max_len)
+    valid_ds = JigsawRNNDataset(valid_texts, y_valid, vocab, max_len)
 
     train_loader = DataLoader(
         train_ds,
