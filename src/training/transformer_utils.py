@@ -1,3 +1,11 @@
+System RAM
+1.1 / 12.7 GB
+ 
+GPU RAM
+0.0 / 15.0 GB
+ 
+Disk
+38.1 / 112.6 GB
 """
 Reusable training and evaluation utilities for transformer models (BERT, DistilBERT).
 """
