@@ -4,6 +4,8 @@ data/*.zip
 
 # Model checkpoints (too large for git) - but keep src/models/ Python code!
 /models/
+results/models/*
+!results/models/.gitkeep
 *.pt
 *.pth
 *.h5
@@ -11,6 +13,8 @@ data/*.zip
 
 # Reports and outputs - but keep src/reports/ if we have Python code there
 /reports/
+results/reports/*
+!results/reports/.gitkeep
 
 # Python
 __pycache__/
